@@ -77,18 +77,11 @@ def search_laptops():
 
     search = criteria.get('value', '')
 
-    brand = ''
-    model = ''
-
-    if search:
-        parts = [p.strip().lower() for p in search.split(',')]
-        brand = parts[0] if len(parts) > 0 else ''
-        model = parts[1] if len(parts) > 1 else ''
 
     filtered_laptops = [
         laptop for laptop in laptops
-        if (brand in laptop['brand'].lower() if brand else True)
-        and (model in laptop['model'].lower() if model else True)
+        if (search in laptop['brand'].lower() if search else True)
+        or (search in laptop['model'].lower() if search else True)
     ]
 
     return flask.jsonify(filtered_laptops), 200
