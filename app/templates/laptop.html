@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laptop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="../static/nav-logo.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.23.0/sweetalert2.all.js"
+        integrity="sha512-kEG1e68iTZ6mp4hawzUG6LqyzSdDY+wXV2OJ2OjU5tfg6daEbVUYKMxYutmnUN7iwKO2BPICXNE7yh2qtS5YHw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/5639d5f36d.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            const updated_laptop = {
+                laptopId: document.querySelector("#laptopId").value,
+                brand: document.querySelector("#brand").value,
+                model: document.querySelector("#model").value,
+                processor: document.querySelector("#processor").value,
+                ram: document.querySelector("#ram").value,
+                storage: document.querySelector("#storage").value,
+                price: document.querySelector("#price").value,
+            };
+
+            fetch('/api/laptops/save', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updated_laptop),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Success:', data);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: 'Laptop details saved successfully!',
+                    });
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Error saving laptop details: ' + error.message,
+                    });
+                });
+        }
+
+        const getLaptopData = (laptopId) => {
+            fetch(`/api/laptops/${laptopId}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    document.querySelector("#laptopId").value = data.laptopId || '';
+                    document.querySelector("#brand").value = data.brand || '';
+                    document.querySelector("#model").value = data.model || '';
+                    document.querySelector("#processor").value = data.processor || '';
+                    document.querySelector("#ram").value = data.ram || '';
+                    document.querySelector("#storage").value = data.storage || '';
+                    document.querySelector("#price").value = data.price || '';
+                })
+                .catch(error => {
+                    console.error("Error fetching laptop data:", error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Failed to load laptop data: ' + error.message,
+                    });
+                });
+        }
+        getLaptopData(id)
+    </script>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+    <!-- Header -->
+    <header class="w-full top-0 left-0 z-50 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="/" class="text-xl md:text-2xl font-semibold tracking-wide flex items-center">
+                <img src="../static/nav-logo.png" class="h-12" alt="TECHNOVA">
+                <span class="text-white">Tech</span>
+                <span class="text-red-500">Nova</span>
+            </a>
+            <span>
+                <!-- Contact Button -->
+                <a href="tel:+919876543210" class="relative inline-flex items-center justify-center
+                    px-6 py-2.5 mx-1
+                    text-sm md:text-base font-medium
+                    text-white
+                    border border-red-500
+                    rounded-full
+                    overflow-hidden
+                    transition-all duration-300 ease-out
+                    hover:scale-105
+                    hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]
+                    hover:bg-red-600">
+                    Contact Us
+                </a>
+            </span>
+
+        </div>
+    </header>
+    <section class="min-h-screen flex items-center justify-center px-6">
+
+        <!-- Main Form Container -->
+        <div
+            class="w-full max-w-3xl bg-white border border-red-500 rounded-3xl shadow-2xl p-8 md:p-12 relative overflow-hidden">
+
+            <!-- Decorative Background Shapes Inside Form -->
+            <div
+                class="absolute top-0 left-0 w-32 h-32 bg-red-300 rounded-full -translate-x-1/3 -translate-y-1/3 pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-0 right-0 w-40 h-40 bg-red-300 rounded-full translate-x-1/4 translate-y-1/4 pointer-events-none">
+            </div>
+            <div
+                class="absolute top-1/3 right-0 w-24 h-24 bg-red-300 rounded-full translate-x-1/3 -translate-y-1/4 pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-1/4 left-0 w-28 h-28 bg-red-300 rounded-full -translate-x-1/4 translate-y-1/6 pointer-events-none">
+            </div>
+
+            <!-- Title -->
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center relative z-10">
+                Edit Laptop Details
+            </h2>
+
+            <!-- Form -->
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-5 relative z-10" onsubmit="handleSubmit(event)">
+
+                <!-- ID -->
+                <div class="md:col-span-2">
+                    <label class="text-gray-700 text-sm mb-1 block">Laptop ID</label>
+                    <input type="text" placeholder="Enter ID" id="laptopId"
+                        class="w-full bg-gray-100 border border-red-500 rounded-xl px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-red-500" />
+                </div>
+
+                <!-- Brand -->
+                <div>
+                    <label class="text-gray-700 text-sm mb-1 block">Brand</label>
+                    <input type="text" placeholder="Dell" id="brand"
+                        class="w-full bg-gray-100 border border-red-500 rounded-xl px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-red-500" />
+                </div>
+
+                <!-- Model -->
+                <div>
+                    <label class="text-gray-700 text-sm mb-1 block">Model</label>
+                    <input type="text" placeholder="XPS 15" id="model"
+                        class="w-full bg-gray-100 border border-red-500 rounded-xl px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-red-500" />
+                </div>
+
+                <!-- Processor -->
+                <div>
+                    <label class="text-gray-700 text-sm mb-1 block">Processor</label>
+                    <input type="text" placeholder="Intel Core i7" id="processor"
+                        class="w-full bg-gray-100 border border-red-500 rounded-xl px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-red-500" />
+                </div>
+
+                <!-- RAM -->
+                <div>
+                    <label class="text-gray-700 text-sm mb-1 block">RAM</label>
+                    <input type="text" placeholder="16GB" id="ram"
+                        class="w-full bg-gray-100 border border-red-500 rounded-xl px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-red-500" />
+                </div>
+
+                <!-- Storage -->
+                <div>
+                    <label class="text-gray-700 text-sm mb-1 block">Storage</label>
+                    <input type="text" placeholder="512GB SSD" id="storage"
+                        class="w-full bg-gray-100 border border-red-500 rounded-xl px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-red-500" />
+                </div>
+
+                <!-- Price -->
+                <div>
+                    <label class="text-gray-700 text-sm mb-1 block">Price</label>
+                    <input type="number" placeholder="1200" id="price"
+                        class="w-full bg-gray-100 border border-red-500 rounded-xl px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-red-500" />
+                </div>
+
+                <!-- Buttons -->
+                <div class="md:col-span-2 flex flex-col sm:flex-row gap-4 mt-6">
+                    <button type="submit"
+                        class="flex-1 bg-red-600 hover:bg-red-700 text-white font-semibold py-3 rounded-xl transition shadow-lg">
+                        Save Changes
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+    <footer class="bg-red-600 text-white py-5 rounded-t-3xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+
+                <!-- Logo Section -->
+                <div class="flex justify-center md:justify-start">
+                    <img src="../static/footer-logo.png" alt="Logo" class="h-[150px] w-auto">
+                </div>
+
+                <!-- About Us Section -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-3xl font-semibold mb-4">About Us</h3>
+                    <p class="text-white/90 leading-relaxed">
+                        We are dedicated to providing high-performance laptops that combine innovation, style, and
+                        reliability. Our mission is to deliver top-quality products and exceptional service to every
+                        customer, ensuring the best computing experience possible. Explore our wide range of laptops
+                        designed to meet the needs of professionals, students, and tech enthusiasts alike.
+                    </p>
+                </div>
+
+                <!-- Follow Us Section -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl font-semibold mb-4">Follow Us</h3>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="https://www.facebook.com/" target="_blank"
+                            class="bg-white text-red-600 w-10 h-10  flex items-center justify-center rounded-full hover:bg-white/80 transition-transform transform hover:scale-110">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.twitter.com/" target="_blank"
+                            class="bg-white text-red-600 w-10 h-10  flex items-center justify-center rounded-full hover:bg-white/80 transition-transform transform hover:scale-110">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank"
+                            class="bg-white text-red-600 w-10 h-10  flex items-center justify-center rounded-full hover:bg-white/80 transition-transform transform hover:scale-110">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank"
+                            class="bg-white text-red-600 w-10 h-10  flex items-center justify-center rounded-full hover:bg-white/80 transition-transform transform hover:scale-110">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Optional small footer note -->
+            <div class="mt-10 text-center text-white/70 text-sm">
+                &copy; 2026 Your Company. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

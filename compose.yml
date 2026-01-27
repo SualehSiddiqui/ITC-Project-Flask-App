@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5500:5500"
+    volumes:
+      - ./app:/app
+    environment:
+      - FLASK_DEBUG=1
+    command: python main.py
+
+networks:
+  default:
+    driver: bridge

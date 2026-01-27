@@ -1,0 +1,502 @@
+[
+    {
+        "laptopId": 1,
+        "brand": "Apple",
+        "model": "MacBook Air M2",
+        "processor": "Apple M2",
+        "ram": "8GB",
+        "storage": "256GB SSD",
+        "price": 1099,
+        "image": "https://images.unsplash.com/photo-1660945742817-217842d82b55?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "laptopId": 2,
+        "brand": "Apple",
+        "model": "MacBook Pro 14",
+        "processor": "Apple M3 Pro",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 1999,
+        "image": "https://images.unsplash.com/photo-1651241680016-cc9e407e7dc3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "laptopId": 3,
+        "brand": "Dell",
+        "model": "XPS 13",
+        "processor": "Intel Core i7-1360P",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 1499,
+        "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/9345/media-gallery/touch/gray/xps-13-9345-laptop-gray-copilot-pc-mg.png?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=612&qlt=100,1&resMode=sharp2&size=612,402&chrss=full"
+    },
+    {
+        "laptopId": 4,
+        "brand": "Dell",
+        "model": "Inspiron 15",
+        "processor": "Intel Core i5-1235U",
+        "ram": "8GB",
+        "storage": "512GB SSD",
+        "price": 749,
+        "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/dell/dell-15-intel-3530/media-gallery/laptop-dell-dc15250nt-sl-metal-fpr-gallery-1.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=627&qlt=100,1&resMode=sharp2&size=627,402&chrss=full"
+    },
+    {
+        "laptopId": 5,
+        "brand": "HP",
+        "model": "Spectre x360",
+        "processor": "Intel Core i7-1355U",
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "price": 1699,
+        "image": "https://acom.pk/cdn/shop/files/hpspectre14-ef2013dx_1024x1024@2x.jpg?v=1689924968"
+    },
+    {
+        "laptopId": 6,
+        "brand": "HP",
+        "model": "Pavilion 14",
+        "processor": "Intel Core i5-1240P",
+        "ram": "8GB",
+        "storage": "512GB SSD",
+        "price": 699,
+        "image": "https://myshop.pk/pub/media/catalog/product/cache/26f8091d81cea4b38d820a1d1a4f62be/h/p/hp-pavilion-x360-14-silver-myshop-pk-2_1.jpg"
+    },
+    {
+        "laptopId": 7,
+        "brand": "Lenovo",
+        "model": "ThinkPad X1 Carbon",
+        "processor": "Intel Core i7-1365U",
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "price": 1899,
+        "image": "https://p2-ofp.static.pub//fes/cms/2024/08/28/fcd70qdguca5etsxhgazpeezkoam7p488088.png"
+    },
+    {
+        "laptopId": 8,
+        "brand": "Lenovo",
+        "model": "Ideapad 3",
+        "processor": "AMD Ryzen 5 5500U",
+        "ram": "8GB",
+        "storage": "256GB SSD",
+        "price": 549,
+        "image": "https://p3-ofp.static.pub//fes/cms/2024/11/21/qr95875io7i71u0fk0l9l7jgp1xqxx686739.png"
+    },
+    {
+        "laptopId": 9,
+        "brand": "Asus",
+        "model": "ZenBook 14",
+        "processor": "Intel Core i7-1260P",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 1199,
+        "image": "https://myshop.pk/pub/media/catalog/product/cache/26f8091d81cea4b38d820a1d1a4f62be/z/e/zenbook_14_ux425ea-myshop-pk-7.jpg"
+    },
+    {
+        "laptopId": 10,
+        "brand": "Asus",
+        "model": "ROG Zephyrus G14",
+        "processor": "AMD Ryzen 9 7940HS",
+        "ram": "32GB",
+        "storage": "1TB SSD",
+        "price": 2199,
+        "image": "https://m.media-amazon.com/images/I/51H8-zcthVL._AC_SX466_.jpg"
+    },
+    {
+        "laptopId": 11,
+        "brand": "Acer",
+        "model": "Swift 3",
+        "processor": "Intel Core i5-1240P",
+        "ram": "8GB",
+        "storage": "512GB SSD",
+        "price": 679,
+        "image": "https://m.media-amazon.com/images/I/51DF5B91M2L._AC_SX466_.jpg"
+    },
+    {
+        "laptopId": 12,
+        "brand": "Acer",
+        "model": "Predator Helios 300",
+        "processor": "Intel Core i7-12700H",
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "price": 1599,
+        "image": "https://myshop.pk/pub/media/catalog/product/cache/26f8091d81cea4b38d820a1d1a4f62be/a/c/acer-predator-helios-300-myshop.pk06.jpg"
+    },
+    {
+        "laptopId": 13,
+        "brand": "MSI",
+        "model": "GF63 Thin",
+        "processor": "Intel Core i5-11400H",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 899,
+        "image": "https://m.media-amazon.com/images/I/61pYveYXv+L._AC_SX466_.jpg"
+    },
+    {
+        "laptopId": 14,
+        "brand": "MSI",
+        "model": "Creator Z16",
+        "processor": "Intel Core i9-12900H",
+        "ram": "32GB",
+        "storage": "2TB SSD",
+        "price": 2799,
+        "image": "https://m.media-amazon.com/images/I/81V3IK6Eo+L._AC_SY300_SX300_QL70_FMwebp_.jpg"
+    },
+    {
+        "laptopId": 15,
+        "brand": "Samsung",
+        "model": "Galaxy Book3 Pro",
+        "processor": "Intel Core i7-1360P",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 1549,
+        "image": "https://images.samsung.com/is/image/samsung/assets/us/computing/galaxybooks/galaxy-book5-pro-360/12292025/SDSAC-10155-Book5_Pro_360_16_US_Gray_001_Front-PCD-KV-DT-1440x640.jpg?imwidth=2560"
+    },
+    {
+        "laptopId": 16,
+        "brand": "Samsung",
+        "model": "Galaxy Book Go",
+        "processor": "Snapdragon 7c",
+        "ram": "8GB",
+        "storage": "256GB SSD",
+        "price": 449,
+        "image": "https://image-us.samsung.com/SamsungUS/home/home-appliances/5252022/Gallery_Images_BookGoLTE_Silver_019_Front-Win11_US.jpg?$product-details-jpg$?$product-details-blur-jpg$"
+    },
+    {
+        "laptopId": 17,
+        "brand": "Microsoft",
+        "model": "Surface Laptop 5",
+        "processor": "Intel Core i7-1255U",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 1699,
+        "image": "https://myshop.pk/pub/media/catalog/product/cache/26f8091d81cea4b38d820a1d1a4f62be/p/l/platinum2-myshop-pk-16_1.jpg"
+    },
+    {
+        "laptopId": 18,
+        "brand": "Microsoft",
+        "model": "Surface Go 3",
+        "processor": "Intel Pentium Gold 6500Y",
+        "ram": "8GB",
+        "storage": "128GB SSD",
+        "price": 599,
+        "image": "https://myshop.pk/pub/media/catalog/product/cache/26f8091d81cea4b38d820a1d1a4f62be/_/m/_microsoft-surface-go-3_-myshop-pk-6_3.jpg"
+    },
+    {
+        "laptopId": 19,
+        "brand": "Razer",
+        "model": "Blade 15",
+        "processor": "Intel Core i7-12800H",
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "price": 2499,
+        "image": "https://m.media-amazon.com/images/I/81mLse2sSVL._AC_SY300_SX300_QL70_FMwebp_.jpg"
+    },
+    {
+        "laptopId": 20,
+        "brand": "Razer",
+        "model": "Blade 14",
+        "processor": "AMD Ryzen 9 7940HS",
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "price": 2299,
+        "image": "https://m.media-amazon.com/images/I/71rRa+HyKdL._AC_SY300_SX300_QL70_FMwebp_.jpg"
+    },
+    {
+        "laptopId": 21,
+        "brand": "Huawei",
+        "model": "MateBook X Pro",
+        "processor": "Intel Core i7-1260P",
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "price": 1799,
+        "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/pc/matebook-x-pro-ultra-premium-edition/images/hero/huawei-matebook-x-pro-kv-2x.webp"
+    },
+    {
+        "laptopId": 22,
+        "brand": "LG",
+        "model": "Gram 17",
+        "processor": "Intel Core i7-1360P",
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "price": 1849,
+        "image": "https://m.media-amazon.com/images/I/617zFnvYNlL._AC_SY300_SX300_QL70_FMwebp_.jpg"
+    },
+    {
+        "laptopId": 23,
+        "brand": "Sony",
+        "model": "VAIO SX14",
+        "processor": "Intel Core i7-1260P",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 1599,
+        "image": "https://my.vaio.com/images/product/sx14/sec01_01.jpg"
+    },
+    {
+        "laptopId": 24,
+        "brand": "Toshiba",
+        "model": "Dynabook Tecra A40",
+        "processor": "Intel Core i5-1245U",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 1299,
+        "image": "https://cdn.cs.1worldsync.com/cc/27/cc2736e2-071e-4103-bfde-5d7a211a9726.jpg"
+    },
+    {
+        "laptopId": 25,
+        "brand": "Gigabyte",
+        "model": "Aero 16",
+        "processor": "Intel Core i9-13900H",
+        "ram": "32GB",
+        "storage": "2TB SSD",
+        "price": 2899,
+        "image": "https://www.gigabyte.com/Image/291cbd36bf6eff3a931c054124c46980/ProductRemoveBg/30635/webp/600"
+    },
+    {
+        "laptopId": 26,
+        "brand": "Framework",
+        "model": "Laptop 13",
+        "processor": "Intel Core i7-1360P",
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "price": 1499,
+        "image": "https://m.media-amazon.com/images/I/71lJJaagwRL._AC_SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+        "laptopId": 27,
+        "brand": "Chuwi",
+        "model": "HeroBook Pro",
+        "processor": "Intel Celeron N4020",
+        "ram": "8GB",
+        "storage": "256GB SSD",
+        "price": 349,
+        "image": "https://store.chuwi.com/cdn/shop/files/HeroBook-Pro-PNG_3ed4f57d-dbc4-424a-9291-c5206cb989b3_1800x1800.png?v=1682653753"
+    },
+    {
+        "laptopId": 28,
+        "brand": "Xiaomi",
+        "model": "Mi Notebook Pro",
+        "processor": "Intel Core i5-11300H",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 999,
+        "image": "https://i02.appmifile.com/264_operatorx_operatorx_opx/03/11/2023/291d4d683c74617b8d713efcfc79713e.png?thumb=1&w=600&f=webp&q=85"
+    },
+    {
+        "laptopId": 29,
+        "brand": "Google",
+        "model": "Pixelbook Go",
+        "processor": "Intel Core i5-8200Y",
+        "ram": "8GB",
+        "storage": "128GB SSD",
+        "price": 649,
+        "image": "https://m.media-amazon.com/images/I/51NKuKgHCxL._AC_SX466_.jpg"
+    },
+    {
+        "laptopId": 30,
+        "brand": "Alienware",
+        "model": "m15 R7",
+        "processor": "Intel Core i9-12900H",
+        "ram": "32GB",
+        "storage": "2TB SSD",
+        "price": 2999,
+        "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/alienware-notebooks/aa16250/media-gallery/laptop-alienware-aa16250nt-gallery-1.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=490&qlt=100,1&resMode=sharp2&size=490,402&chrss=full"
+    },
+    {
+        "laptopId": 31,
+        "brand": "Dell",
+        "model": "Latitude 7420",
+        "processor": "Intel Core i7-1185G7",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 1399,
+        "image": "https://m.media-amazon.com/images/I/61VRqYjVIvL._AC_SX466_.jpg"
+    },
+    {
+        "laptopId": 32,
+        "brand": "HP",
+        "model": "EliteBook 840",
+        "processor": "Intel Core i7-1265U",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 1499,
+        "image": "https://m.media-amazon.com/images/I/716afOj5dwL._AC_SY300_SX300_QL70_FMwebp_.jpg"
+    },
+    {
+        "laptopId": 33,
+        "brand": "Lenovo",
+        "model": "Yoga 9i",
+        "processor": "Intel Core i7-1360P",
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "price": 1649,
+        "image": "https://m.media-amazon.com/images/I/61ZaEmoL0FL._AC_SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+        "laptopId": 34,
+        "brand": "Asus",
+        "model": "VivoBook 15",
+        "processor": "Intel Core i3-1215U",
+        "ram": "8GB",
+        "storage": "512GB SSD",
+        "price": 549,
+        "image": "https://m.media-amazon.com/images/I/61HdKkPp3XL._AC_SX466_.jpg"
+    },
+    {
+        "laptopId": 35,
+        "brand": "Acer",
+        "model": "Aspire 5",
+        "processor": "AMD Ryzen 7 5700U",
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "price": 749,
+        "image": "https://m.media-amazon.com/images/I/71sesDsw95L._AC_SX466_.jpg"
+    },
+    {
+        "laptopId": 36,
+        "brand": "MSI",
+        "model": "Modern 14",
+        "processor": "Intel Core i5-1155G7",
+        "ram": "8GB",
+        "storage": "512GB SSD",
+        "price": 629,
+        "image": "https://myshop.pk/pub/media/catalog/product/cache/26f8091d81cea4b38d820a1d1a4f62be/m/s/msi_myshop-pk-4_1.jpg"
+    },
+    {
+        "laptopId": 37,
+        "brand": "Samsung",
+        "model": "Notebook 9 Pro",
+        "processor": "Intel Core i7-8565U",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 1199,
+        "image": "https://m.media-amazon.com/images/I/517IrUCu+pL._AC_SX466_.jpg"
+    },
+    {
+        "laptopId": 38,
+        "brand": "Microsoft",
+        "model": "Surface Book 3",
+        "processor": "Intel Core i7-1065G7",
+        "ram": "32GB",
+        "storage": "1TB SSD",
+        "price": 2799,
+        "image": "https://m.media-amazon.com/images/I/71Xx-r1-8jL._AC_SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+        "laptopId": 39,
+        "brand": "Razer",
+        "model": "Blade Stealth 13",
+        "processor": "Intel Core i7-1165G7",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 1599,
+        "image": "https://m.media-amazon.com/images/I/61pT5w5-IBL._AC_SY300_SX300_QL70_FMwebp_.jpg"
+    },
+    {
+        "laptopId": 40,
+        "brand": "LG",
+        "model": "Ultra PC 15",
+        "processor": "Intel Core i5-12500H",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 1299,
+        "image": "https://m.media-amazon.com/images/I/6159B6tXp-L._AC_SX466_.jpg"
+    },
+    {
+        "laptopId": 41,
+        "brand": "Huawei",
+        "model": "MateBook D15",
+        "processor": "AMD Ryzen 5 5500U",
+        "ram": "8GB",
+        "storage": "512GB SSD",
+        "price": 649,
+        "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/ecommerce/my/new-launch/matepad-10-4-and-d15/sub-banner/111Sub-banner-New-Launch-PC.png"
+    },
+    {
+        "laptopId": 42,
+        "brand": "Xiaomi",
+        "model": "RedmiBook 15",
+        "processor": "Intel Core i5-11300H",
+        "ram": "8GB",
+        "storage": "512GB SSD",
+        "price": 599,
+        "image": "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1669028358.69144153.jpg?thumb=1&w=300&f=webp&q=85"
+    },
+    {
+        "laptopId": 43,
+        "brand": "Framework",
+        "model": "Laptop 16",
+        "processor": "AMD Ryzen 7 7840HS",
+        "ram": "32GB",
+        "storage": "2TB SSD",
+        "price": 1999,
+        "image": "https://images.prismic.io/frameworkmarketplace/aIdNf1GsbswqTVlN_fw16_family_overview_summary_swappable-gpu.jpg?auto=format,compress"
+    },
+    {
+        "laptopId": 44,
+        "brand": "Alienware",
+        "model": "x17 R2",
+        "processor": "Intel Core i9-12900HK",
+        "ram": "32GB",
+        "storage": "2TB SSD",
+        "price": 3499,
+        "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/alienware-notebooks/aa18250/media-gallery/laptop-alienware-aa18250nt-gallery-1.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=486&qlt=100,1&resMode=sharp2&size=486,402&chrss=full"
+    },
+    {
+        "laptopId": 45,
+        "brand": "Gigabyte",
+        "model": "G5",
+        "processor": "Intel Core i5-12500H",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 999,
+        "image": "https://m.media-amazon.com/images/I/61TErPjFceS._AC_SX466_.jpg"
+    },
+    {
+        "laptopId": 46,
+        "brand": "Sony",
+        "model": "VAIO Z",
+        "processor": "Intel Core i7-11375H",
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "price": 2199,
+        "image": "https://us.vaio.com/cdn/shop/files/1-8.jpg?v=1731476151&width=1100"
+    },
+    {
+        "laptopId": 47,
+        "brand": "Toshiba",
+        "model": "Satellite Pro C50",
+        "processor": "Intel Core i5-1135G7",
+        "ram": "8GB",
+        "storage": "512GB SSD",
+        "price": 699,
+        "image": "https://i.ebayimg.com/images/g/xZsAAOSwisxmcEXG/s-l1600.webp"
+    },
+    {
+        "laptopId": 48,
+        "brand": "Chuwi",
+        "model": "CoreBook X",
+        "processor": "Intel Core i5-8259U",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 599,
+        "image": "https://www.chuwi.com/public/upload/image/20241031/20ee74ad1135981ea95adcfc1ceaebf3.jpg"
+    },
+    {
+        "laptopId": 49,
+        "brand": "Google",
+        "model": "Pixelbook",
+        "processor": "Intel Core i7-7Y75",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "price": 999,
+        "image": "https://m.media-amazon.com/images/I/511E7M6DpXL._AC_SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+        "laptopId": 50,
+        "brand": "HP",
+        "model": "OMEN 16",
+        "processor": "AMD Ryzen 7 6800H",
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "price": 1499,
+        "image": "https://m.media-amazon.com/images/I/81zvGZ-rx1L._AC_SY300_SX300_QL70_FMwebp_.jpg"
+    }
+]

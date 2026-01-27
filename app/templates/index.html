@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechNova</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/5639d5f36d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="../static/nav-logo.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.23.0/sweetalert2.all.js"
+        integrity="sha512-kEG1e68iTZ6mp4hawzUG6LqyzSdDY+wXV2OJ2OjU5tfg6daEbVUYKMxYutmnUN7iwKO2BPICXNE7yh2qtS5YHw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+    <script>
+        const getSearch = () => {
+            const searchTerm = document.querySelector("#search").value.toLowerCase();
+
+            // Only search if searchTerm length is greater than 2
+            if (searchTerm.length > 2) {
+                fetch("/api/laptops/search", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ value: searchTerm }),
+                })
+                    .then((response) => response.json())
+                    .then((laptops) => {
+                        let html = ``;
+                        document.querySelector("#table-body").innerHTML = '';
+                        laptops.forEach((laptop) => {
+                            html += `                          
+                            <tr class="odd:bg-white even:bg-gray-150 hover:bg-red-100 transition-all duration-300">
+                                <td class="px-6 py-4">$${laptop.price || 'N/A'}</td>
+                                <td class="px-6 py-4 font-medium">${laptop.brand || ''}</td>
+                                <td class="px-6 py-4">${laptop.model || ''}</td>
+                                <td class="px-6 py-4">${laptop.processor || ''}</td>
+                                <td class="px-6 py-4">${laptop.ram || ''}</td>
+                                <td class="px-6 py-4">${laptop.storage || ''}</td>
+                                <td class="px-6 py-4 font-semibold text-red-600">$${laptop.price || 'N/A'}</td>
+                                <td class="px-6 py-4 text-center">
+                                    <a
+                                        href="/laptop?id=${laptop.laptopId}"
+                                        class="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold shadow-md hover:bg-red-700 hover:shadow-xl transition-all duration-300">
+                                        Edit
+                                    </a>
+                                </td>
+                            </tr> 
+                            `;
+                        });
+                        document.querySelector("#table-body").innerHTML = html;
+                    })
+                    .catch(error => {
+                        console.error("Search error:", error);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Search Error',
+                            text: 'Failed to search laptops: ' + error.message,
+                        });
+                    })
+            } else if (searchTerm.length === 0) {
+                // If search is cleared, show all laptops
+                fetchLaptops();
+            }
+        }
+
+        const fetchLaptops = () => {
+            fetch(`/api/laptops`)
+                .then(response => response.json())
+                .then(laptops => {
+                    let html = ``;
+                    document.querySelector("#table-body").innerHTML = '';
+                    laptops.forEach(laptop => {
+                        html += `
+                        <tr class="odd:bg-white even:bg-gray-150 hover:bg-red-100 transition-all duration-300">
+                            <td class="px-6 py-4">$${laptop.price || 'N/A'}</td>
+                            <td class="px-6 py-4 font-medium">${laptop.brand || ''}</td>
+                            <td class="px-6 py-4">${laptop.model || ''}</td>
+                            <td class="px-6 py-4">${laptop.processor || ''}</td>
+                            <td class="px-6 py-4">${laptop.ram || ''}</td>
+                            <td class="px-6 py-4">${laptop.storage || ''}</td>
+                            <td class="px-6 py-4 font-semibold text-red-600">$${laptop.price || 'N/A'}</td>
+                            <td class="px-6 py-4 text-center">
+                                <a
+                                    href="/laptop?id=${laptop.laptopId}"
+                                    class="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold shadow-md hover:bg-red-700 hover:shadow-xl transition-all duration-300">
+                                    Edit
+                                </a>
+                            </td>
+                        </tr>
+                    `;
+                        document.querySelector("#table-body").innerHTML = html;
+                    });
+                })
+                .catch(error => {
+                    console.error("Fetch laptops error:", error);
+                });
+        }
+        fetchLaptops();
+
+    </script>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+    <section class="w-full bg-black text-white flex flex-col items-center justify-center text-center px-6 relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-red-500 via-red-600 to-black opacity-20 rounded-xl"></div>
+
+        <header class="w-full top-0 left-0 z-50 bg-transparent">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between">
+
+                <!-- Logo -->
+                <a href="/" class="text-xl md:text-2xl font-semibold tracking-wide flex items-center">
+                    <img src="../static/nav-logo.png" class="h-12" alt="TECHNOVA">
+                    <span class="text-white">Tech</span>
+                    <span class="text-red-500">Nova</span>
+                </a>
+                <span class="mt-5 sm:mt-0">
+                    <!-- Contact Button -->
+                    <a href="tel:+919876543210" class="relative inline-flex items-center justify-center
+                    px-6 py-2.5 mx-1
+                    text-sm md:text-base font-medium
+                    text-white
+                    border border-red-500
+                    rounded-full
+                    overflow-hidden
+                    transition-all duration-300 ease-out
+                    hover:scale-105
+                    hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]
+                    hover:bg-red-600">
+                        Contact Us
+                    </a>
+                </span>
+
+            </div>
+        </header>
+        <div class="relative z-10 max-w-3xl my-10">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4">
+                TechNova Laptops
+            </h1>
+
+            <p class="text-gray-300 text-lg md:text-2xl mb-8">
+                Powerful Laptops, Perfect Performance
+            </p>
+
+            <a href="#"
+                class="inline-block bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                Explore Now
+            </a>
+        </div>
+    </section>
+
+    <section class="mt-10 md:mt-18 w-full flex justify-center px-4">
+        <div class="w-full max-w-xl">
+            <div class="relative">
+                <input type="text" placeholder="Search by Brand, Model (e.g. Apple, MacBook Air)" id="search" class="w-full bg-gray-900 text-white placeholder-gray-400
+                    rounded-full py-3 px-6 pr-20
+                    ring-2
+                    ring-gray
+                    focus:outline-none focus:ring-2 focus:ring-red-500
+                    transition-all duration-300 shadow-lg" />
+                <button class="absolute right-1 top-1/2 transform -translate-y-1/2
+               bg-red-500 hover:bg-red-600 text-white font-semibold
+               px-5 py-2 rounded-full
+               transition-all duration-300 shadow-md" onclick="getSearch()">
+                    Search
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="w-full flex justify-center px-4 py-16 bg-black">
+        <div
+            class="w-full max-w-6xl bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl border border-red-500/40 overflow-hidden">
+            <div class="max-h-[500px] overflow-y-auto relative">
+
+                <table class="w-full border-collapse text-sm md:text-base">
+                    <thead class="sticky top-0 z-10 bg-white shadow-md">
+                        <tr class="text-left text-gray-800 uppercase tracking-wide text-xs md:text-sm">
+                            <th class="px-6 py-4 border-b border-red-200">Id</th>
+                            <th class="px-6 py-4 border-b border-red-200">Brand</th>
+                            <th class="px-6 py-4 border-b border-red-200">Model</th>
+                            <th class="px-6 py-4 border-b border-red-200">Processor</th>
+                            <th class="px-6 py-4 border-b border-red-200">RAM</th>
+                            <th class="px-6 py-4 border-b border-red-200">Storage</th>
+                            <th class="px-6 py-4 border-b border-red-200">Price</th>
+                            <th class="px-6 py-4 border-b border-red-200 text-center">Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 text-gray-700" id="table-body">
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-red-600 text-white py-5 rounded-t-3xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+
+                <div class="flex justify-center md:justify-start">
+                    <img src="../static/footer-logo.png" alt="Logo" class="h-[150px] w-auto">
+                </div>
+
+                <div class="text-center md:text-left">
+                    <h3 class="text-3xl font-semibold mb-4">About Us</h3>
+                    <p class="text-white/90 leading-relaxed">
+                        We are dedicated to providing high-performance laptops that combine innovation, style, and
+                        reliability. Our mission is to deliver top-quality products and exceptional service to every
+                        customer, ensuring the best computing experience possible. Explore our wide range of laptops
+                        designed to meet the needs of professionals, students, and tech enthusiasts alike.
+                    </p>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl font-semibold mb-4">Follow Us</h3>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="https://www.facebook.com/" target="_blank"
+                            class="bg-white text-red-600 w-10 h-10  flex items-center justify-center rounded-full hover:bg-white/80 transition-transform transform hover:scale-110">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.twitter.com/" target="_blank"
+                            class="bg-white text-red-600 w-10 h-10  flex items-center justify-center rounded-full hover:bg-white/80 transition-transform transform hover:scale-110">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank"
+                            class="bg-white text-red-600 w-10 h-10  flex items-center justify-center rounded-full hover:bg-white/80 transition-transform transform hover:scale-110">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank"
+                            class="bg-white text-red-600 w-10 h-10  flex items-center justify-center rounded-full hover:bg-white/80 transition-transform transform hover:scale-110">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-10 text-center text-white/70 text-sm">
+                &copy; 2026 Your Company. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
