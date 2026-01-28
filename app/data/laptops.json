@@ -6,7 +6,7 @@
         "processor": "Apple M2",
         "ram": "8GB",
         "storage": "256GB SSD",
-        "price": 1099
+        "price": "1099"
     },
     {
         "laptopId": 2,

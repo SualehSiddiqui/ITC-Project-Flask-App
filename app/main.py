@@ -57,19 +57,6 @@ def save_laptop():
             
     return flask.jsonify({"error": "Laptop not found"}), 404
 
-@app.route("/api/laptops/delete/<int:id>", methods=['DELETE'])
-def delete_laptop(id):
-    # Convert laptopId to int for comparison
-    new_laptop['laptopId'] = int(new_laptop['laptopId'])
-    
-    for i, laptop in enumerate(laptops):
-        if laptop['laptopId'] == id:
-            laptops.pop(i)
-            update_laptops()
-            return flask.jsonify({"message": "Laptop deleted successfully"}), 200 
-
-    return flask.jsonify({"error": "Laptop not found"}), 404
-
 
 @app.route("/api/laptops/search", methods=['POST'])
 def search_laptops():
